@@ -41,16 +41,16 @@ if(swimming  ||readingNovel || dancing  ||  singing){
 let intro= 'Hobbies of ' + fullName  + ' (' + gender +') ' +'are ' 
      
 if (swimming){
-    intro =  intro + 'swimming'
+    intro =  intro + 'swimming '
  }
  if (readingNovel){
-    intro =  intro + 'reading novel'
+    intro =  intro + 'reading novel '
  }
  if (dancing){
-    intro =  intro + 'dancing'
+    intro =  intro + 'dancing '
  }
  if (singing){
-    intro =  intro + 'singing'
+    intro =  intro + 'singing '
  }
  if (!error){
   
