@@ -4,7 +4,10 @@ function validate(){
     
     let fullName = document.getElementById('full-name').value 
     let gender = document.getElementById('gender').value
-    let hobbies = document.getElementById('hobbies').checked
+    let swimming = document.getElementById('swimming').checked
+    let readingNovel = document.getElementById('reading-novel').checked
+    let dancing = document.getElementById('dancing').checked
+    let singing = document.getElementById('singing').checked
     let error = false
 
 if(fullName.length >= 5 && fullName.includes(' ') ){
@@ -27,7 +30,7 @@ if(gender != 'None'){
     error = true
 }
 
-if(hobbies != 'None'){
+if(swimming  ||readingNovel || dancing  ||  singing){
     document.getElementById('hobbies-valid').style.display = 'block'
     document.getElementById('hobbies-invalid').style.display = 'none'
 }else{
@@ -35,9 +38,23 @@ if(hobbies != 'None'){
     document.getElementById('hobbies-valid').style.display = 'none'
     error = true
 }
+let intro= 'Hobbies of ' + fullName  + ' (' + gender +') ' +'are ' 
+     
+if (swimming){
+    intro =  intro + 'swimming'
+ }
+ if (readingNovel){
+    intro =  intro + 'reading novel'
+ }
+ if (dancing){
+    intro =  intro + 'dancing'
+ }
+ if (singing){
+    intro =  intro + 'singing'
+ }
  if (!error){
-    
-    alert(`Hobbies of ${fullName} (${gender}) are ${hobbies} !`)
+  
+   alert(`${intro} !`)
     document.getElementById('registration-form').reset()
 
 
