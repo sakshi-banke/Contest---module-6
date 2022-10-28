@@ -1,6 +1,6 @@
 
-
-function validate(){
+let globalIsSubmitted = false
+function validate(isSubmitted = false){
     
     let fullName = document.getElementById('full-name').value 
     let gender = document.getElementById('gender').value
@@ -10,6 +10,11 @@ function validate(){
     let singing = document.getElementById('singing').checked
     let error = false
 
+    if(isSubmitted){
+        globalIsSubmitted = true
+    }
+
+    if(globalIsSubmitted){
 if(fullName.length >= 5 && fullName.includes(' ') ){
     document.getElementById('full-name-valid').style.display = 'block'
     document.getElementById('full-name-invalid').style.display = 'none'
@@ -41,19 +46,21 @@ if(swimming  ||readingNovel || dancing  ||  singing){
 let intro= 'Hobbies of ' + fullName  + ' (' + gender +') ' +'are ' 
      
 if (swimming){
-    intro =  intro + 'swimming '
+    intro =  intro + 'swimming,  '
  }
  if (readingNovel){
-    intro =  intro + 'reading novel '
+    intro =  intro + 'reading novel, '
  }
  if (dancing){
-    intro =  intro + 'dancing '
+    intro =  intro + 'dancing, '
  }
  if (singing){
-    intro =  intro + 'singing '
+    intro =  intro + 'singing. '
  }
- if (!error){
-  
+ if (!error && isSubmitted){
+
+   
+    
    alert(`${intro} !`)
     document.getElementById('registration-form').reset()
 
@@ -70,5 +77,5 @@ if (swimming){
  }
 
 
-}
+}}
 
